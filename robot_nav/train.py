@@ -1,4 +1,3 @@
-# from robot_nav.models.TD3.TD3 import TD3
 from models.TD3.TD3 import TD3
 from models.SAC.SAC import SAC
 from models.HCM.hardcoded_model import HCM

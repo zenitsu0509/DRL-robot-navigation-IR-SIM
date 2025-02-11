@@ -314,6 +314,7 @@ class PPO:
         return state, terminal
 
     def save(self, filename, directory):
+        Path(directory).mkdir(parents=True, exist_ok=True)
         torch.save(
             self.policy_old.state_dict(), "%s/%s_policy.pth" % (directory, filename)
         )

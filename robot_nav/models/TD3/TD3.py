@@ -218,6 +218,7 @@ class TD3(object):
             self.save(filename=self.model_name, directory=self.save_directory)
 
     def save(self, filename, directory):
+        Path(directory).mkdir(parents=True, exist_ok=True)
         torch.save(self.actor.state_dict(), "%s/%s_actor.pth" % (directory, filename))
         torch.save(
             self.actor_target.state_dict(),
