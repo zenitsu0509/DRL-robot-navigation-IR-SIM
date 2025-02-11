@@ -58,7 +58,7 @@ class SIM_ENV:
         vec1 = vec1 / np.linalg.norm(vec1)
         vec2 = vec2 / np.linalg.norm(vec2)
         cos = np.dot(vec1, vec2)
-        sin = np.cross(vec1, vec2).item()
+        sin = vec1[0] * vec2[1] - vec1[1] * vec2[0]
 
         return cos, sin
 

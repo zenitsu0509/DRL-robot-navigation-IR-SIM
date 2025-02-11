@@ -39,6 +39,7 @@ def test_buffer():
     )
     assert prefilled_buffer.count == 100
 
+
 def test_ppo_buffer():
     model = PPO(
         state_dim=10,

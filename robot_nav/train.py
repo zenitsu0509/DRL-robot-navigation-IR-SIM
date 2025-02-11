@@ -1,3 +1,4 @@
+# from robot_nav.models.TD3.TD3 import TD3
 from models.TD3.TD3 import TD3
 from models.SAC.SAC import SAC
 from models.HCM.hardcoded_model import HCM
@@ -21,11 +22,11 @@ def main(args=None):
     nr_eval_episodes = 10  # how many episodes to use to run evaluation
     max_epochs = 100  # max number of epochs
     epoch = 0  # starting epoch number
-    episodes_per_epoch = 25  # how many episodes to run in single epoch
+    episodes_per_epoch = 70  # how many episodes to run in single epoch
     episode = 0  # starting episode number
-    train_every_n = 15  # train and update network parameters every n episodes
+    train_every_n = 2  # train and update network parameters every n episodes
     training_iterations = 80  # how many batches to use for single training cycle
-    batch_size = 40  # batch size for each training iteration
+    batch_size = 64  # batch size for each training iteration
     max_steps = 300  # maximum number of steps in single episode
     steps = 0  # starting step number
     load_saved_buffer = False  # whether to load experiences from assets/data.yml
@@ -35,13 +36,13 @@ def main(args=None):
     )
     save_every = 10  # save the model every n training cycles
 
-    model = PPO(
+    model = TD3(
         state_dim=state_dim,
         action_dim=action_dim,
         max_action=max_action,
         device=device,
         save_every=save_every,
-        load_model=True,
+        load_model=False,
     )  # instantiate a model
 
     sim = SIM_ENV()  # instantiate environment

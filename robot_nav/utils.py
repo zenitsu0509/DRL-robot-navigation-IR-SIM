@@ -95,7 +95,6 @@ def get_buffer(
     random_seed=666,
     file_names=["robot_nav/assets/data.yml"],
 ):
-
     if isinstance(model, PPO):
         return model.buffer
 
