@@ -1,2 +1,4 @@
 /.venv/
 /runs/
+__pycache__
+robot_nav/models/TD3/checkpoint
